@@ -97,6 +97,7 @@
 # print(user_dict)
 
 # ---set セット型 重複がなく、順序を持たないデータの集合-------
+
 #インデックス番号は使えない
 
 ###Create
@@ -177,6 +178,76 @@
 
 # price = [str(i) + '円' for i in range(0,101)]
 # print(price)
+
+
+# -----クラスを学ぼう---------------------------------
+
+#-----クラスの基礎----------
+
+##クラスの定義
+  # class MyClass(object):
+  #   pass
+
+##クラスからインスタンスを作成
+# me = MyClass()
+# print(me) # => <__main__.MyClass object at 0x100799b00>
+
+#-----
+
+## 何も要素を持たないクラス
+# class EmptyClass(object):
+#     pass
+
+## 要素を好きなように定義できるので、複数の変数をまとめた入れ物として扱える
+# holder = EmptyClass()
+# holder.name = "Yohei"
+# holder.age = 30
+# print(holder.name, holder.age)  # => Yohei 30
+
+#-----インスタンス変数とインスタンスメソッド
+
+# class MyClass(object):
+    # クラス直下に定義した変数はクラス変数
+    # インスタンス変数ではなく
+    # some_field = "aaa"
+    
+    # インスタンス生成時に、値を渡すことができる
+    # def __init__(self, name, age):
+    #     # 「self.xxx」でインスタンス変数の参照/代入ができる
+    #     self.name = name
+    #     self.age = age
+
+    # インスタンスメソッドの定義
+    # def introduce(self):
+    #     print("My name is %s, %d years old." % (self.name, self.age))
+        
+
+    # インスタンス化
+# me = MyClass('Yohei', 30)
+# me.introduce()  # => My name is Yohei, 30 years old.
+
+# 直接値を代入することもできる
+# me.name = "Taro"
+# me.age = 25
+# me.introduce()  # => My name is Taro, 25 years old.
+
+
+#-----クラス変数とクラスメソッドとスタティックメソッド
+
+class MyClass(object):
+    # クラス直下に定義すると、クラス変数になる
+    primary_key = "id"
+
+    # クラスメソッドは「@classmethod」を付与して定義する
+    @classmethod
+    def show_primary_key(cls):
+        print("PrimayKey is %s" % cls.primary_key)
+
+
+# クラス変数やクラスメソッドへのアクセスは、インスタンス化する必要ない
+print(MyClass.primary_key)  # => id
+MyClass.show_primary_key()  # => PrimayKey is id
+
 
 # <1 > 写経してみよう
 
