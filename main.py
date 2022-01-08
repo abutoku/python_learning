@@ -234,19 +234,19 @@
 
 #-----クラス変数とクラスメソッドとスタティックメソッド
 
-class MyClass(object):
-    # クラス直下に定義すると、クラス変数になる
-    primary_key = "id"
+# class MyClass(object):
+#     # クラス直下に定義すると、クラス変数になる
+#     primary_key = "id"
 
-    # クラスメソッドは「@classmethod」を付与して定義する
-    @classmethod
-    def show_primary_key(cls):
-        print("PrimayKey is %s" % cls.primary_key)
+#     # クラスメソッドは「@classmethod」を付与して定義する
+#     @classmethod
+#     def show_primary_key(cls):
+#         print("PrimayKey is %s" % cls.primary_key)
 
 
 # クラス変数やクラスメソッドへのアクセスは、インスタンス化する必要ない
-print(MyClass.primary_key)  # => id
-MyClass.show_primary_key()  # => PrimayKey is id
+# print(MyClass.primary_key)  # => id
+# MyClass.show_primary_key()  # => PrimayKey is id
 
 
 # <1 > 写経してみよう
