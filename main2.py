@@ -35,3 +35,59 @@
 
 # print(name)
 # print(age)
+
+
+# ----read / write a file ファイルの読み書き-------------------------
+
+### Wtire a file.
+
+# f = open("python.txt","w")
+# f.write("Hello")
+# f.close
+
+###Read a file.
+
+# f = open("python.txt")
+# txt = f.read()
+# print(txt)
+# f.close
+
+###Append a file.(追加書き込み)
+
+# f = open("python.txt","a")
+# f.write("Hi")
+# f.close()
+
+###using With
+
+# with open ("python.txt") as f:
+#   txt = f.read()
+#   print(txt)
+
+# ----class クラスの使い方-------------------------
+
+##Class and Constructor.
+
+# class User:
+#   def __init__(self,name):
+#     self.name = name
+    
+#   #Method
+#   def say(self,name):
+#     print("Hello" + self.name)
+    
+# ##Instance.
+# user = User("Yohei")
+# print(user.name)
+
+# # Use method.
+# user = User()
+# user.say("Yohei")
+
+
+# <2> 関数-------------------------
+
+# def profile(x,y=20):
+#   print("私の名前は" + x + "で" + str(y) + "歳です")
+  
+# profile("たけし")
