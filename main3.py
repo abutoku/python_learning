@@ -304,9 +304,114 @@
 
 #####ソートする######
 
+# list01 = [2,5,3,1,8,6,7,4]
+
+# ソートする（元のリスト自体をソートする）
+# list01.sort()
+# print(list01)
+
+# ソートする（元のリストは変更しない）
+# list02 = sorted(list01)
+# print(list01)
+# print(list02)
+
+# ソート条件を指定する（cmp） ※ Python2系の場合
+# >>> list01.sort(cmp=lambda x, y: x < y)
+# >>> list01 = sorted(list01, cmp=lambda x, y: x < y)
+
+# ソート条件を指定する（key） ※ Python3系の場合
+# list01.sort(key=lambda x: x)
+# print(list01)
+# list01 = sorted(list01, key=lambda x: x)
+# print(list01)
+
+# ソートの前処理を指定する
+# ["a", "AA", "Ab", "ac"].sort(key=str.lower)
+
+# 逆順にソートする（元のリスト自体をソートする）
+# list01.sort(reverse=True)
+# print(list01)
+
+# または（元のリストは変更しない）
+# list02 = list(reversed(list01))
+# print(list02)
+
+#####リストをスタックとして使う######
+
+# stuck = [3, 4, 5]
+
+# stuck.append(6)
+#=>[3, 4, 5, 6]
+
+# stuck.pop() #=> 6
+# print(stuck)  # => [3, 4, 5]
+
+#####リストをキューとして使う######
+
+# リストのappendとpop(0)で実現できるが、
+# pop(0)を行うと全要素の位置を変更するため処理が遅い
+# 代わりに以下の実装を利用すると高速
+
+# from collections import deque
+
+# queue = deque(["A", "B", "C"])
+# =>deque(['A', 'B', 'C'])
+
+# queue.append("D")
+# => deque(['A', 'B', 'C', 'D'])
+# print(queue)
+
+# queue.popleft()
+# =>'A'
+# print(queue)
+
+# queue
+# => deque(['B', 'C', 'D'])
 
 
-###コーディング規約
-###デコレーター
-###演算子の定義
-###ラムダ式
+#####関数プログラミング（filter、map、reduce)######
+
+
+#####リスト内包表記######
+# list01 = range(1, 6) # =>[1, 2, 3, 4, 5]
+# print(list(list01))
+
+# list01 = [i * 2 for i in list01] #=>[2, 4, 6, 8, 10]
+# print(list(list01))
+
+# print ([i * 2 for i in range(10)])
+# print ([i * 2 for i in range(10) if i % 2 is 1])
+
+# 異なる組み合わせを全て抽出
+# print ([(x, y) for x in [1, 2, 3] for y in [3, 1, 4] if x != y])
+
+#####ループ処理######
+
+# list01 = list("abcde")
+
+# 1件ずつ処理する
+# for item in list01:
+#   print(item)
+
+# ループ処理（indexも一緒に取得したい）
+# for i, v in enumerate(list01):
+#   print (i, v)
+
+# ループ処理（2つの配列を同時に処理する）
+# firstNames = ["a", "b", "c"]
+# lastNames = ["A", "B", "C"]
+# for f, l in zip(firstNames, lastNames):
+#   print (f, l)
+
+# ループ中に、ループ対象のリストを処理する
+# list01 = list(range(10))
+
+# for i in list01[:]:
+#   if i % 3 is 0:
+#     list01.append(i)
+    
+# print(list(list01))
+
+
+
+
