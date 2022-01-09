@@ -208,7 +208,7 @@
 
 # class MyClass(object):
     # クラス直下に定義した変数はクラス変数
-    # インスタンス変数ではなく
+    # インスタンス変数ではない
     # some_field = "aaa"
     
     # インスタンス生成時に、値を渡すことができる
@@ -248,42 +248,64 @@
 # print(MyClass.primary_key)  # => id
 # MyClass.show_primary_key()  # => PrimayKey is id
 
+#------スタティックメソッド
 
-# <1 > 写経してみよう
+# class MyClass(object):
+#     primary_key = "id"
 
-# ----function 関数--------------------------
+#     @classmethod
+#     def show1(cls):
+#         print(cls.primary_key)
 
-###Basic
+#     # スタティックメソッドは「@staticmethod」を付与して関数を定義します
+#     @staticmethod
+#     def show2():
+#         print(MyClass.primary_key)
 
-# def add(a,b):
-#   return a + b
 
-# result = add(10,20)
-# print(result)
+# MyClass.show1()  # => id
+# MyClass.show2()  # => id
 
-### Argument default value
+#-----クラスメソッドとスタティックメソッドでは、継承した場合に挙動が変わる
 
-# def pow(a,b=2):
-#   return a ** b
+# class MySubClass(MyClass):
+#     primary_key = "subid"
 
-# result = pow(10)
-# print(result)
+# MySubClass.show1()  # => subid MySubClass.primary_keyを取得
+# MySubClass.show2()  # => id MyClass.primary_keyを取得
 
-###keyword arguments
+#-----クラスの継承
 
-# def create_date(
-#   year=0,month=0,date=0):
-#   return str(year) + "/" + str(month) + "/" + str(date)
+# 人を表すクラス（親クラス）
+# class Person(object):
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
 
-# print(create_date(year=2017,date=10))
+#     def sayHi(self):
+#         print("Hi, my name is %s, %d years old." % (self.name, self.age))
+        
+      #  %s → 文字列
+      #  %d → 整数
 
-###Multiple return 
+# 仕事人を表すクラス（子クラス）
+# class Worker(Person):
+#     def __init__(self, name, age, skills):
+#         # 親クラスの関数を使う場合には、super()を使う
+#         super().__init__(name, age)
+#         self.skills = skills
 
-# def get_user():
-#   return 'Yohei',30
+#     def show_skills(self):
+#         # 親クラスの変数も参照できる
+#         print("%s's skills are %s" % (self.name, self.skills))
 
-# name,age = get_user()
+# インスタンス化
+# w = Worker("Yohei", 30, ["html", "js", "css"])
+# # 親クラスのメソッドも呼び出せる
+# w.sayHi()
+# w.show_skills()
 
-# print(name)
-# print(age)
+
+### インスタンス変数、インスタンスメソッド、クラス変数、クラスメソッド、スタティックメソッド、継承の使い分け
+
 
