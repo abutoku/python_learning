@@ -370,6 +370,38 @@
 
 
 #####関数プログラミング（filter、map、reduce)######
+list01 = [1, 2, 3, 4, 5]
+
+# filter（条件に一致する要素に絞り込む、元のリストは不変）
+# ラムダ型の場合
+# list02  = filter(lambda x: x % 2 is 0, list01) #=>[2, 4]
+# print(list(list02))
+
+# 関数型の場合
+# def isEven(x): return x % 2 is 0
+# list02 = filter(isEven, list01) #=>[2, 4]
+# print(list(list02))
+
+# map（各要素に処理を行う、元のリストは不変）
+# ラムダ型の場合
+# list02 = map(lambda x: x*2, list01)  # =>[2, 4, 6, 8, 10]
+# print(list(list02))
+
+# 関数型の場合
+# def makeDouble(x): return x * 2
+# list02 = map(makeDouble, list01)  # =>[2, 4, 6, 8, 10]
+# print(list(list02))
+
+# reduce（各要素を組み合わせて1つの結果を作る、元のリストは不変）
+# ラムダ型の場合
+# from functools import reduce
+# num = reduce(lambda x, y: x*y, list01) #=>120
+# print(num)
+
+# 関数型の場合
+# def multiple(x, y): return x * y  # =>120
+# num = reduce(multiple, list01)
+# print(num)
 
 
 #####リスト内包表記######
