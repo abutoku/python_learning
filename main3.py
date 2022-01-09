@@ -146,6 +146,8 @@
 
 #----リストのいろいろ------------------------------
 
+#####リストを生成する######
+
 #空のリストを作る
 # list01 = list()
 # list01 = []
@@ -172,12 +174,135 @@
 # print(list01)
 
 # レンジから作る
-list01 = range(0,10) # => [1, 2, 3, 4, 5, 6, 7, 8, 9]
-print(list(list01))
+# list01 = range(0,10) # => [1, 2, 3, 4, 5, 6, 7, 8, 9]
+# print(list(list01))
 
 # レンジで数値が小さくなるように作る
-list01 = range(10, 1, -1) # => [10, 9, 8, 7, 6, 5, 4, 3, 2]
-print(list(list01))
+# list01 = range(10, 1, -1) # => [10, 9, 8, 7, 6, 5, 4, 3, 2]
+# print(list(list01))
+
+
+#####値を追加する######
+
+# list01 = ["a","b","c"]
+
+# 後ろに追加
+# list01.append("d")
+# print(list01)
+
+# 前に追加
+# list01.insert(0, "z")
+# print(list01)
+
+# 任意の場所に追加
+# list01.insert(2, "hoge")
+# print(list01)
+
+# 配列に配列を追加
+# list01.extend([10, 20, 30, 10, 20, 30])
+# print(list01)
+# list02 = list01 + [1, 2, 3, 4, 5]
+# print(list02)
+
+
+#####値を削除する######
+
+# 要素の削除（複数存在する場合は1つ目のみ）
+# list01.remove("c")
+# print(list01)
+
+# 要素の削除（複数存在するものを全部）
+# list01 = [item for item in list01 if item is not "c"]
+# print(list01)
+
+# list01 = filter(lambda a: a != "c", list01)
+# print(list(list01))
+
+# 位置を指定して削除（1件）
+# del list01[0]
+# print(list01)
+
+# 位置を指定して削除（複数件）
+# del list01[1:2]
+# print(list01)
+
+# 位置を指定して削除（全部）
+# del list01[:]
+# print(list01)
+
+#####値の取得、出現回数、サイズ######
+
+# list01 = [1, 2, 3, 4, 5]
+
+# 範囲指定で取り出す
+# 要素0〜1
+# print (list01[0:2])
+
+# 要素1〜後ろから2つ目まで
+#print (list01[0:-1])
+
+# 要素0〜2まで
+# print (list01[:3])
+
+# 要素3〜最後まで
+# print (list01[3:])
+
+# 2つ置きに取得する
+# print(list01[::2]) # =>[1, 3, 5]
+
+# 逆順に取得する
+# print(list01[::-1]) # =>[5, 4, 3, 2, 1]
+
+# 逆順に2つ置きに取得する
+# print(list01[::-2])  # => [5, 3, 1]
+
+
+# 指定した要素の位置を取得する
+# index = list01.index(1)
+# print(index)
+
+# 最後の要素を取得して同時に削除する
+# item = list01.pop()
+# print(item)
+# print(list01)
+
+# 指定した位置の要素を取得して同時に削除する
+# item = list01.pop(1)
+# print(item)
+# print(list01)
+
+
+# 指定した要素の出現回数を取得する
+# count = list01.count(2)
+# print(count)
+
+# サイズを確認する
+# print(len(list01))
+
+# 要素の存在確認
+# list01 = [1, 2, 3, 4, 5]
+# print (2 in list01)
+# =>True
+# print (6 in list01)
+# =>False
+
+#####値を変更する######
+
+# list01 = ["a", "b", "c", "d"]
+
+# 要素3の値を変更する
+# list01[3] = "D"  # => ['a', 'b', 'c', 'D']
+# print(list01)
+
+# 要素0〜2を変更する
+# list01[:3] = ["A", "B", "C"]  #=> ['A', 'B', 'C', 'D']
+# print(list01)
+
+# 一番後ろ〜の値を変更する（追加要素が多い場合は末尾に追加される）
+# list01[-1:] = ["E", "F"] #=> ['A', 'B', 'C', 'E', 'F']
+# print(list01)
+
+#####ソートする######
 
 
 
