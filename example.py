@@ -22,6 +22,5 @@
 # print(html)
 
 #<3> パッケージの作成
-
-from myutils import my_fun
-my_fun.hello()
+# from myutils import my_fun
+# my_fun.hello()
