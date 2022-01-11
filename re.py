@@ -1,4 +1,4 @@
-import re
+# import re
 
 # search関数（任意の箇所で一致）
 
